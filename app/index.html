@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <h1>Vice Ledger</h1>
+    <p class="tagline">The GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, offline.</p>
+    <p class="counts" id="headerCounts">55 trophies · 1 platinum · 2 gold · 6 silver · 46 bronze · 28 hidden on PSN</p>
+  </div>
+  <div class="progressBox">
+    <p class="progressBig" id="progressBig">0 / 55 earned</p>
+    <div class="progressBar"><div class="progressFill" id="progressFill"></div></div>
+    <p class="progressNote" id="progressNote">Platinum: Vice Got a Price!</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" data-view="checklist" class="tab active" id="tab-checklist">Checklist</button>
+  <button type="button" data-view="roadmap" class="tab" id="tab-roadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="missables" class="tab" id="tab-missables">Missables</button>
+  <button type="button" data-view="sources" class="tab" id="tab-sources">Sources &amp; About</button>
+</nav>
+
+<section id="view-checklist" class="view">
+  <div class="controls">
+    <label class="searchLabel">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+    <label>Kind
+      <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="characters">Characters &amp; Strangers</option>
+        <option value="combat">Combat &amp; Heists</option>
+        <option value="exploration">Exploration &amp; Moments</option>
+        <option value="money">Money &amp; Property</option>
+        <option value="platinum">Platinum &amp; 100%</option>
+        <option value="online">Online</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="status">
+        <option value="all">Earned &amp; not yet</option>
+        <option value="earned">Earned only</option>
+        <option value="todo">Not yet earned</option>
+      </select>
+    </label>
+    <label class="spoilerLabel"><input id="spoiler" type="checkbox" checked> Hide story spoilers</label>
+    <button id="export" type="button">Export progress</button>
+    <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+    <button id="reset" type="button">Reset</button>
+  </div>
+  <p class="nextUp" id="nextUp"></p>
+  <p class="kindCounts" id="kindCounts"></p>
+  <div class="panes">
+    <div class="listPane">
+      <table>
+        <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>Kind</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="emptyNote" id="emptyNote" hidden></p>
+    </div>
+    <aside class="detailPane" id="detail" aria-live="polite"></aside>
+  </div>
+</section>
+
+<section id="view-roadmap" class="view" hidden>
+  <h2>Roadmap to the Platinum</h2>
+  <p class="lede">One playthrough, no online trophies, no DLC trophies, no difficulty setting. The story first, then the people, then the activities, then the map, then the money — and 100% completion last. Every stage below is built from the official trophy descriptions; the counts are PSN's tracked targets.</p>
+  <div id="roadmap"></div>
+</section>
+
+<section id="view-missables" class="view" hidden>
+  <h2>Missable trophies</h2>
+  <p class="lede">Only one trophy on the list is reported as possibly missable. Everything else can be finished in free roam after the story — there is no mission replay and no New Game+, but the open world stays open.</p>
+  <div id="missables"></div>
+</section>
+
+<section id="view-sources" class="view" hidden>
+  <h2>Sources &amp; about</h2>
+  <div id="sources"></div>
+</section>
+
+<footer>
+  <p>Vice Ledger is an unofficial, open-source guide. It shows the official trophy names and descriptions as PlayStation publishes them; every guide is written in its own words for this entry. No Rockstar Games logo, artwork or game screenshot is used. Works fully offline — no network requests, progress saved in your browser only.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Vice Ledger — a paper-and-sunset look of its own. No Rockstar art, no web fonts, no network. */
+* { box-sizing: border-box; }
+body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background: #f6f3ee; color: #1d2129; font-size: 15px; line-height: 1.45; }
+h1, h2, h3 { font-family: "Iowan Old Style", Palatino, Georgia, serif; }
+h1 { font-size: 34px; margin: 0; letter-spacing: 0.5px; }
+h2 { font-size: 24px; margin: 4px 0 8px; }
+h3 { font-size: 18px; margin: 0 0 4px; }
+.masthead { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; padding: 18px 24px 12px; background: #fff; border-bottom: 3px solid #d24e2a; }
+.tagline { margin: 2px 0; font-size: 16px; color: #3a3f47; }
+.counts { margin: 4px 0 0; color: #626a75; font-size: 13px; }
+.progressBox { min-width: 240px; text-align: right; }
+.progressBig { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 26px; margin: 0; }
+.progressBar { height: 10px; background: #e8e2d6; border-radius: 6px; overflow: hidden; margin: 6px 0; }
+.progressFill { height: 100%; background: #d24e2a; width: 0%; }
+.progressNote { margin: 0; color: #626a75; font-size: 13px; }
+.tabs { display: flex; gap: 4px; padding: 0 24px; background: #fff; border-bottom: 1px solid #e0d9ca; }
+.tab { border: 0; background: none; font: inherit; font-weight: 600; padding: 10px 14px; cursor: pointer; color: #626a75; border-bottom: 3px solid transparent; }
+.tab.active { color: #d24e2a; border-bottom-color: #d24e2a; }
+.view { padding: 16px 24px 24px; max-width: 1280px; }
+.lede { max-width: 860px; color: #3a3f47; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 4px 0 10px; }
+.controls label { font-weight: 600; font-size: 13px; color: #3a3f47; }
+.controls select, .controls input[type="search"] { font: inherit; font-weight: 400; padding: 6px 8px; border: 1px solid #c9c2b2; border-radius: 6px; background: #fff; }
+.controls input[type="search"] { width: 220px; }
+.controls button { font: inherit; padding: 7px 12px; border-radius: 6px; border: 1px solid #c9c2b2; background: #fff; cursor: pointer; }
+.controls button:hover { border-color: #d24e2a; color: #d24e2a; }
+.import input { font-size: 12px; }
+.spoilerLabel { display: inline-flex; gap: 6px; align-items: center; }
+.nextUp { background: #fff3ec; border: 1px solid #f0c9b8; border-radius: 8px; padding: 10px 14px; margin: 0 0 8px; font-size: 15px; }
+.nextUp strong { color: #d24e2a; }
+.kindCounts { color: #626a75; font-size: 13px; margin: 0 0 10px; }
+.panes { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 16px; align-items: start; }
+table { border-collapse: collapse; width: 100%; background: #fff; border-radius: 10px; overflow: hidden; }
+th, td { border-bottom: 1px solid #eee7da; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #efe9dc; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #626a75; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: #fdf6ef; }
+tbody tr.selected { background: #fff3ec; }
+tbody tr.earnedRow td.trophyName { color: #626a75; }
+.trophyName { font-weight: 600; }
+.trophyDesc { font-weight: 400; color: #626a75; font-size: 13px; display: block; margin-top: 2px; }
+.grade { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.grade-platinum { background: #d8e1ea; color: #2c4a5e; }
+.grade-gold { background: #f3e2ae; color: #6b5310; }
+.grade-silver { background: #e3e6e9; color: #4a5560; }
+.grade-bronze { background: #f0d9c4; color: #7a4a22; }
+.kindTag { font-size: 12px; color: #626a75; white-space: nowrap; }
+.flagMissable { display: inline-block; background: #d24e2a; color: #fff; font-size: 11px; font-weight: 700; border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: 1px; }
+.flagHidden { display: inline-block; background: #626a75; color: #fff; font-size: 11px; font-weight: 700; border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: 1px; }
+.spoilerHidden { color: #626a75; font-style: italic; }
+.detailPane { background: #fff; border: 1px solid #e0d9ca; border-radius: 14px; padding: 16px 18px; position: sticky; top: 12px; }
+.detailPane .official { background: #f6f3ee; border-left: 4px solid #d24e2a; padding: 10px 12px; border-radius: 0 8px 8px 0; margin: 10px 0; }
+.detailPane .official p { margin: 2px 0; }
+.detailPane .guideText { font-size: 15px; }
+.detailPane h3 { font-size: 22px; }
+.detailMeta { color: #626a75; font-size: 13px; margin: 2px 0 0; }
+.sourcesLine { font-size: 13px; color: #3a3f47; border-top: 1px solid #eee7da; margin-top: 12px; padding-top: 10px; }
+.sourcesLine a { color: #d24e2a; }
+.earnButton { font: inherit; font-weight: 700; padding: 8px 14px; border-radius: 6px; border: 1px solid #d24e2a; background: #d24e2a; color: #fff; cursor: pointer; margin-top: 10px; }
+.earnButton.earned { background: #fff; color: #2e7d32; border-color: #2e7d32; }
+.emptyNote { background: #fff; border: 1px dashed #c9c2b2; border-radius: 8px; padding: 14px; }
+.stage { background: #fff; border: 1px solid #e0d9ca; border-radius: 14px; padding: 16px 18px; margin: 0 0 14px; }
+.stageHead { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+.stageHead .stageCount { color: #626a75; font-size: 13px; white-space: nowrap; }
+.stage ul { margin: 8px 0 0; padding-left: 20px; }
+.stage li { margin: 4px 0; }
+.stage li.done { color: #626a75; text-decoration: line-through; }
+.stage li.done .stageItemName { text-decoration: line-through; }
+.missableCard { background: #fff; border: 1px solid #e0d9ca; border-left: 5px solid #d24e2a; border-radius: 12px; padding: 16px 18px; margin: 0 0 14px; }
+.missableCard.safe { border-left-color: #2e7d32; }
+.sourceList { background: #fff; border: 1px solid #e0d9ca; border-radius: 14px; padding: 16px 18px; }
+.sourceList li { margin: 6px 0; }
+.sourceList a { color: #d24e2a; }
+footer { padding: 16px 24px 24px; color: #626a75; font-size: 13px; max-width: 900px; }
+@media (max-width: 900px) { .panes { grid-template-columns: 1fr; } .masthead { flex-direction: column; } .detailPane { position: static; } }
